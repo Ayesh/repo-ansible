@@ -19,7 +19,15 @@ module.exports = {
           { type: "test",     release: "patch" },
     ] } ],
     "@semantic-release/github",
-    "@semantic-release/release-notes-generator",
+    [
+          "@semantic-release/release-notes-generator",
+          {
+            "preset": "conventionalcommits",
+            "presetConfig": {
+              "issueUrlFormat": "https://team.linkorb.com/cards/{{id}}"
+            }
+          }
+    ],
     "@semantic-release/changelog",
     [ "@semantic-release/git", {
         assets: [ "CHANGELOG.md" ],
