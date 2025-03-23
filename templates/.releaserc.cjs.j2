@@ -19,7 +19,19 @@ module.exports = {
           { type: "test",     release: "patch" },
     ] } ],
     "@semantic-release/github",
+{% if repo.issue_url_format %}
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "issueUrlFormat": "{{ repo.issue_url_format }}"
+        }
+      }
+    ],
+{% else %}
     "@semantic-release/release-notes-generator",
+{% endif %}
     "@semantic-release/changelog",
 {% if package_json_version_bump %}
     [ "@semantic-release/npm", { npmPublish: false } ],

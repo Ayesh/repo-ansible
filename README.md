@@ -115,6 +115,7 @@ your repository.
 | devcontainer<br>repository `string` |ghcr.io/linkorb/php-docker-base| Image to use for devcontainer (registry image URL)|
 | devcontainer<br>tag `string` |php8-review| Image tag|
 | archived `boolean` |false| Setting this option to `true` will cause the repository to be archived. Once archived, it can only be unarchived manually.|
+| issue_url_format `string` |{{host}}/{{owner}}/{{repository}}/issues/{{id}}| Base URL for the issues mentioned with conventional-commits pattern. Use {{id}} for the issue ID, as well other placeholders mentioned in https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md#substitutions|
 | omit_files `array` |[]| **EXPERIMENTAL** A list of files to skip during file generation.|
  - [Looking for repo.yaml schema integration within your IDE?](./docs/SchemaIDESupport.md)
 

@@ -379,6 +379,14 @@ properties:
         type: boolean
         default: true
 
+  issue_url_format:
+    type: string
+    description: >
+      Base URL for the issues mentioned with conventional-commits pattern.
+      Use {{id}} for the issue ID, as well other placeholders mentioned in
+      https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.2.0/README.md#substitutions
+    default: "{{host}}/{{owner}}/{{repository}}/issues/{{id}}"
+
   omit_files:
     type: array
     default: []
