@@ -47,7 +47,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ayesh
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
@@ -56,7 +56,7 @@ jobs:
           context: .
           provenance: false
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ghcr.io/ayesh/repo-ansible:latest
           labels: ${{ steps.meta.outputs.labels }}
 
   reviewdog-container:
