@@ -2,8 +2,6 @@ name: Build & Release
 
 on:
   push:
-    tags:
-      - '*'
 
 permissions:
   packages: write
@@ -56,7 +54,7 @@ jobs:
           context: .
           provenance: false
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ghcr.io/${{ github.repository_owner }}/repo-ansible:latest
           labels: ${{ steps.meta.outputs.labels }}
 
   reviewdog-container:
