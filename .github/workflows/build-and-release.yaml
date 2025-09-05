@@ -23,16 +23,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
-          # moby/buildkit v0.11.0 causes untagged images to appear in github
-          # packages and the workaround does not seem to have any effect
-          # (set provenance=false in docker/build-push-action@v4)
           driver-opts: network=host,image=moby/buildkit:v0.10.5
 
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}
+          images: ghcr.io/ayesh/repo-ansible
           tags: |
             type=sha
             type=raw,value=latest,enable=true
@@ -70,16 +67,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
-          # moby/buildkit v0.11.0 causes untagged images to appear in github
-          # packages and the workaround does not seem to have any effect
-          # (set provenance=false in docker/build-push-action@v4)
           driver-opts: network=host,image=moby/buildkit:v0.10.5
 
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}/reviewdog
+          images: ghcr.io/ayesh/repo-ansible/reviewdog
           tags: |
             type=sha
             type=raw,value=latest,enable=true
