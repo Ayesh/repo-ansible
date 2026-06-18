@@ -39,11 +39,9 @@ module.exports = {
     [ "@semantic-release/git", {
         assets: [
 {% set files = (repo.github_workflows.release.commit_changed_files | default([])) + ['CHANGELOG.md'] %}
-
 {% if package_json_version_bump %}
 {% set files = files + ['package.json'] %}
 {% endif %}
-
 {% for filename in files | unique | list | sort %}
           "{{ filename }}",
 {% endfor %}
